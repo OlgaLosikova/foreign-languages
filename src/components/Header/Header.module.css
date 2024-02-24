@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  color: var(--color-dark);
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--box-shadow);
+  height: 60px;
+  border-radius: var(--card-border-radius);
+  margin: var(--indentation-s) 20%;
+  padding: 0 var(--indentation-l);
+  background-color: var(--color-white);
+}
+.navigation {
+  display: flex;
+  list-style-type: none;
+}
+.navItem{
+  margin-left: var(--indentation-m);
+}
+.logoText{
+    text-transform: uppercase;
+    font-size: var(--line-height-logo);
+    margin-left: var(--indentation-s);
+}
+.logo{
+    display: flex;
+    align-items: center;
+}

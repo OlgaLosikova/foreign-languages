@@ -1,0 +1,7 @@
+.card {
+  background-color: var(--color-light-blue);
+  border-radius: var(--card-border-radius);
+  width: 40vw;
+  height: 45vh;
+  margin: var(--indentation-xxl) auto;
+}
