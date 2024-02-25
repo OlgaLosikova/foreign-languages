@@ -1,0 +1,8 @@
+.input {
+  height: var(--line-height-m);
+  border-color: var(--color-gray);
+  margin-left: var(--indentation-s);
+  font-size: medium;
+  width: 15vw;
+  text-align: center;
+}

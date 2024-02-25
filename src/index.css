@@ -31,13 +31,14 @@ code {
   --color-gray: rgba(148, 148, 148, 0.2);
 
   --card-border-radius: 2rem;
-  --button-height: 3rem;
+  --line-height-l: 3rem;
+  --line-height-m: 2rem;
+  --line-height-s: 1.5rem;
   --indentation-s: 10px;
   --indentation-m: 15px;
   --indentation-l: 20px;
   --indentation-xxl: 30px;
-  /* --indentation-3xl: 35px; */
-  --line-height-logo: 1.5rem;
+  --indentation-3xl: 35px;
 
   --box-shadow: 0 0 3px 3px var(--color-gray);
 }

@@ -1,12 +1,12 @@
 .button{
-    height: var(--line-height-logo);
+    height: var(--line-height-m);
     border-radius: var(--card-border-radius);
-    padding-left: var(--indentation-xxl);
-    padding-right: var(--indentation-xxl);
+    padding-left: var(--indentation-s);
+    padding-right: var(--indentation-s);
     border: 0;
     font-size: medium;
     color: var(--color-white);
-    margin: 0 var(--indentation-s);
+    margin-left: var(--indentation-s);
 }
 .success{
     background-color: var(--color-success);

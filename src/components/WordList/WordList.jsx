@@ -1,30 +1,25 @@
 import EditForm from "../EditForm/EditForm";
 import styles from "./WordList.module.css";
+import data from "../../words.json";
 export default function WordList() {
+  let editTable=false;
   return (
-    <div>
-      <table>
-        <thead>
-          <tr>
-            <th>Заголовок 1</th>
-            <th>Заголовок 2</th>
-            <th>Заголовок 3</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Ячейка 1</td>
-            <td>Ячейка 2</td>
-            <td>Ячейка 3</td>
-          </tr>
-          <tr>
-            <td>Ячейка 4</td>
-            <td>Ячейка 5</td>
-            <td>Ячейка 6</td>
-          </tr>
+    <div >
+      {editTable&&<EditForm />}
+      <table className={styles.table}> 
+        <tbody className={styles.tableBody}>
+          {Object.keys(data).map((item) => {
+            return (
+              <tr key={data[item].id} className={styles.tr}>
+                <td className={styles.td}>{data[item].english}</td>
+                <td className={styles.td}>{data[item].transcription}</td>
+                <td className={styles.td}>{data[item].russian}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
-      <EditForm />
+      
     </div>
   );
 }

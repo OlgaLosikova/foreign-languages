@@ -1,4 +1,4 @@
-import styles from "./NavButton.module.css";
+import styles from "./Button.module.css";
 import cn from "classnames";
 
 export default function NavButton(props) {

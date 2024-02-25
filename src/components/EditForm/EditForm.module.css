@@ -1,0 +1,14 @@
+.editForm{
+    background-color: var(--color-light-blue);
+    height: var(--line-height-l);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: var(--indentation-3xl) 20% 0;
+    padding-right: var(--indentation-s);
+}
+.inputGroup{
+    display: flex;
+    justify-content: start;
+
+}

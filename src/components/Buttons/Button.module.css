@@ -1,5 +1,5 @@
 .button{
-    height: var(--button-height);
+    height: var(--line-height-l);
     border-radius: var(--card-border-radius);
     padding-left: var(--indentation-xxl);
     padding-right: var(--indentation-xxl);
@@ -16,4 +16,7 @@
 }
 .secondary{
     background-color: var(--color-secondary);
+}
+.primary{
+    background-color: var(--color-primary);
 }
