@@ -1,12 +1,11 @@
-import EditForm from "../EditForm/EditForm";
+
 import styles from "./WordList.module.css";
 import data from "../../words.json";
+
 export default function WordList() {
-  let editTable=false;
   return (
-    <div >
-      {editTable&&<EditForm />}
-      <table className={styles.table}> 
+    <div>
+      <table className={styles.table}>
         <tbody className={styles.tableBody}>
           {Object.keys(data).map((item) => {
             return (
@@ -19,7 +18,6 @@ export default function WordList() {
           })}
         </tbody>
       </table>
-      
     </div>
   );
 }
