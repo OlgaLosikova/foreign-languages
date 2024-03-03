@@ -8,10 +8,12 @@
   width: 40vw;
   height: 45vh;
   margin: var(--indentation-xxl) auto;
+  box-shadow: var(--box-shadow);
 }
-.title{
+.title {
   font-size: var(--line-height-m);
 }
-.transcription{
+.transcription {
   margin-bottom: 10%;
 }
+
