@@ -1,7 +1,6 @@
 import styles from "./EditForm.module.css";
 import EditButton from "../Buttons/EditButton";
 import Input from "../Input/Input";
-import { useState } from "react";
 
 export default function EditForm({ onClickEditButton }) {
   return (

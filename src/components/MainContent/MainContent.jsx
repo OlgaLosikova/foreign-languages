@@ -26,7 +26,7 @@ export default function MainContent() {
             color="primary"/>
         </>) : (
         <>
-          <WordList />
+          <WordList onClickEditButton={handleEditStart}/>
           {!editTable && (
             <>
               <Button

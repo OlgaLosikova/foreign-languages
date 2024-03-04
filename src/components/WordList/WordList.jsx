@@ -2,7 +2,9 @@ import styles from "./WordList.module.css";
 import data from "../../words.json";
 import EditButton from "../Buttons/EditButton";
 
-export default function WordList() {
+
+export default function WordList({onClickEditButton}) {
+
   return (
     <div>
       <table className={styles.table}>
@@ -14,7 +16,7 @@ export default function WordList() {
                 <td className={styles.td}>{data[item].transcription}</td>
                 <td className={styles.td}>{data[item].russian}</td>
                 <td>
-                  <EditButton color="warning" icon="edit" />
+                  <EditButton onClickEditButton={onClickEditButton} color="warning" icon="edit" />
                 </td>
               </tr>
             );
