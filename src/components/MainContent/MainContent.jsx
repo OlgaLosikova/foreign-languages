@@ -1,13 +1,14 @@
 import Button from "../Buttons/Button";
-import WordList from "../WordList/WordList";
 import { useState } from "react";
 import EditForm from "../EditForm/EditForm";
-import Card from "../Card/Card";
+import WordList from "../WordList/WordList"
+import CardContainer from "../CardContainer/CardContainer";
+import styles from "./MainContent.module.css"
 
 export default function MainContent() {
   const [editTable, setEditTable] = useState(false);
   const [traningStart, setTraningStart] = useState(false);
-  
+
   const handleEditStart = () => {
     setEditTable(!editTable);
   };
@@ -16,16 +17,16 @@ export default function MainContent() {
   };
   return (
     <>
-      {editTable && <EditForm onClickEditButton={handleEditStart}/>}
-      {traningStart ? (
-        <>
-          <Card />
+      {editTable && <EditForm onClickEditButton={handleEditStart} />}
+      {traningStart ? 
+        (<div className={styles.mainContent}>
+          <CardContainer/>
           <Button
             onClickButton={handleTraningStart}
             textButton="Назад"
             color="primary"/>
-        </>) : (
-        <>
+        </div>) 
+        : (<>
           <WordList onClickEditButton={handleEditStart}/>
           {!editTable && (
             <>
@@ -37,11 +38,12 @@ export default function MainContent() {
               <Button
                 onClickButton={handleTraningStart}
                 textButton="Тренироваться"
-                color="secondary"/>
+                color="secondary"
+              />
             </>
           )}
-        </>
-      )}
+        </>)
+        }
     </>
   );
 }

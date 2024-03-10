@@ -7,7 +7,7 @@
   border-radius: var(--card-border-radius);
   width: 40vw;
   height: 45vh;
-  margin: var(--indentation-xxl) auto;
+  margin: var(--indentation-xxl);
   box-shadow: var(--box-shadow);
 }
 .title {

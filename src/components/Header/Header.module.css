@@ -14,15 +14,18 @@
   display: flex;
   list-style-type: none;
 }
-.navItem{
+.navItem {
   margin-left: var(--indentation-m);
 }
-.logoText{
-    text-transform: uppercase;
-    font-size: var(--line-height-s);
-    margin-left: var(--indentation-s);
+.navItem:hover {
+  text-decoration: underline;
 }
-.logo{
-    display: flex;
-    align-items: center;
+.logoText {
+  text-transform: uppercase;
+  font-size: var(--line-height-s);
+  margin-left: var(--indentation-s);
+}
+.logo {
+  display: flex;
+  align-items: center;
 }

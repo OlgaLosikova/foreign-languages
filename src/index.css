@@ -29,6 +29,11 @@ code {
   --color-danger: #ff6f50;
   --color-warning: #ffb359;
   --color-gray: rgba(148, 148, 148, 0.2);
+  --color-primary-hover: #2e9dc5;
+  --color-secondary-hover: #3c64a0;
+  --color-success-hover: #32b457;
+  --color-danger-hover: #df5030;
+  --color-warning-hover: #e49331;
 
   --card-border-radius: 2rem;
   --line-height-l: 3rem;
