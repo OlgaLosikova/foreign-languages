@@ -1,16 +1,18 @@
 import styles from "./EditForm.module.css";
 import EditButton from "../Buttons/EditButton";
 import Input from "../Input/Input";
+import cn from "classnames";
 
-export default function EditForm({ onClickEditButton }) {
+export default function EditForm({ onClickEditButton, rowSelect }) {
+  const editStyle = cn(styles.editForm, rowSelect && styles.editFormExisting);
   return (
-    <div className={styles.editForm}>
+    <div className={editStyle}>
       <div className={styles.inputGroup}>
         <Input placeholderText="Слово" />
         <Input placeholderText="Транскрипция" />
         <Input placeholderText="Перевод" />
       </div>
-      <div>
+      <>
         <EditButton
           onClickEditButton={onClickEditButton}
           color="success"
@@ -21,7 +23,7 @@ export default function EditForm({ onClickEditButton }) {
           color="danger"
           icon="delete"
         />
-      </div>
+      </>
     </div>
   );
 }

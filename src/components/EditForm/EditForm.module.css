@@ -1,14 +1,17 @@
-.editForm{
-    background-color: var(--color-light-blue);
-    height: var(--line-height-l);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: var(--indentation-3xl) 20% 0;
-    padding-right: var(--indentation-s);
+.editForm {
+  background-color: var(--color-light-blue);
+  height: var(--line-height-l);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: var(--indentation-3xl) 20% 0;
+  padding-right: var(--indentation-l);
 }
-.inputGroup{
-    display: flex;
-    justify-content: flex-start;
-
+.editFormExisting {
+  margin: 0;
+}
+.inputGroup {
+  display: flex;
+  justify-content: flex-start;
+  margin-right: 100px;
 }
