@@ -27,7 +27,7 @@ export default function MainContent() {
             color="primary"/>
         </div>) 
         : (<>
-          <WordList/>
+          <WordList onClickEditButton={handleEditStart}/>
           {!editTable && (
             <>
               <Button
