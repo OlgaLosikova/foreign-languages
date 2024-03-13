@@ -20,7 +20,6 @@ export default function MainContent() {
   };
   const handleEditTable = () => {
     setEditTable(!editTable);
-
   };
   const handleTraningStart = () => {
     setTraningStart(!traningStart);
@@ -42,6 +41,7 @@ export default function MainContent() {
           <WordList
             onClickEditButton={handleEditTable}
             editTableRow={editTable}
+            addTableRow={addRow}
           />
           {!addRow && (
             <>

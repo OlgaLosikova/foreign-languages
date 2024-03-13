@@ -1,7 +1,7 @@
 import styles from "./WordList.module.css";
 import data from "../../words.json";
 import EditButton from "../Buttons/EditButton";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import EditForm from "../EditForm/EditForm";
 
 export default function WordList(props) {
@@ -10,7 +10,8 @@ export default function WordList(props) {
     editableTranscription,
     editableTranslation,
     onClickEditButton,
-    editTableRow
+    editTableRow,
+    addTableRow
   } = props;
   const [objList, setObjList] = useState(data);
   const [rowSelect, setRowSelect] = useState(false);
@@ -28,14 +29,17 @@ export default function WordList(props) {
       })
     );
   };
-  useEffect(()=>{setObjList(data); setHideButton(false)},[editTableRow])
+  useEffect(() => {
+    setObjList(data);
+    setHideButton(false);
+  }, [editTableRow]);
   const table = objList.map((item) => {
     editableWord = item.english;
     editableTranscription = item.transcription;
     editableTranslation = item.russian;
     let tableRow;
     if (!item.isEdit) {
-      if (!hideButton) {
+      if (!hideButton&&!addTableRow) {
         tableRow = (
           <>
             <td className={styles.td}>{item.english}</td>
