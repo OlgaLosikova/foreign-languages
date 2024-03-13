@@ -1,18 +1,25 @@
 import styles from "./WordList.module.css";
 import data from "../../words.json";
 import EditButton from "../Buttons/EditButton";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import EditForm from "../EditForm/EditForm";
 
 export default function WordList(props) {
-  let { editableWord, editableTranscription, editableTranslation } = props;
+  let {
+    editableWord,
+    editableTranscription,
+    editableTranslation,
+    onClickEditButton,
+    editTableRow
+  } = props;
   const [objList, setObjList] = useState(data);
   const [rowSelect, setRowSelect] = useState(false);
+  const [hideButton, setHideButton] = useState(false);
   const handleRowEdit = (id) => {
+    setHideButton(true);
     setRowSelect(true);
     setObjList(
       objList.map((obj) => {
-        console.log(`${obj.id} ${id}`);
         if (obj.id === id) {
           return { ...obj, isEdit: true };
         } else {
@@ -21,26 +28,37 @@ export default function WordList(props) {
       })
     );
   };
+  useEffect(()=>{setObjList(data); setHideButton(false)},[editTableRow])
   const table = objList.map((item) => {
-    editableWord=item.english;
-    editableTranscription=item.transcription;
-    editableTranslation=item.russian;
+    editableWord = item.english;
+    editableTranscription = item.transcription;
+    editableTranslation = item.russian;
     let tableRow;
     if (!item.isEdit) {
-      tableRow = (
-        <>
-          <td className={styles.td}>{item.english}</td>
-          <td className={styles.td}>{item.transcription}</td>
-          <td className={styles.td}>{item.russian}</td>
-          <td>
-            <EditButton
-              color="warning"
-              icon="edit"
-              onClickEditButton={() => handleRowEdit(item.id)}
-            />
-          </td>
-        </>
-      );
+      if (!hideButton) {
+        tableRow = (
+          <>
+            <td className={styles.td}>{item.english}</td>
+            <td className={styles.td}>{item.transcription}</td>
+            <td className={styles.td}>{item.russian}</td>
+            <td>
+              <EditButton
+                color="warning"
+                icon="edit"
+                onClickEditButton={() => handleRowEdit(item.id)}
+              />
+            </td>
+          </>
+        );
+      } else {
+        tableRow = (
+          <>
+            <td className={styles.td}>{item.english}</td>
+            <td className={styles.td}>{item.transcription}</td>
+            <td className={styles.td}>{item.russian}</td>
+          </>
+        );
+      }
     } else {
       tableRow = (
         <EditForm
@@ -48,6 +66,7 @@ export default function WordList(props) {
           editableTranscription={editableTranscription}
           editableTranslation={editableTranslation}
           rowSelect={rowSelect}
+          onClickEditButton={onClickEditButton}
         />
       );
     }
