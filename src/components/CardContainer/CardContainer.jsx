@@ -4,6 +4,7 @@ import styles from "./CardContainer.module.css";
 import { useState} from "react";
 import data from "../../words.json";
 
+
 export default function CardContainer() {
   let [index, setIndex] = useState(0);
 

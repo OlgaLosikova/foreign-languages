@@ -5,10 +5,8 @@ import MainContent from "./components/MainContent/MainContent";
 export default function App() {
   return (
     <div className="App">
-      <Header/>
-      <MainContent />
+        <Header />
+        <MainContent />
     </div>
   );
 }
-
-

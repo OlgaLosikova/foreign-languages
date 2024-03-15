@@ -4,10 +4,10 @@ import EditForm from "../EditForm/EditForm";
 import WordList from "../WordList/WordList";
 import CardContainer from "../CardContainer/CardContainer";
 import styles from "./MainContent.module.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 export default function MainContent() {
   const [addRow, setAddRow] = useState(false);
-  const [traningStart, setTraningStart] = useState(false);
   const [editTable, setEditTable] = useState(false);
 
   const handleAddRowStart = () => {
@@ -21,44 +21,47 @@ export default function MainContent() {
   const handleEditTable = () => {
     setEditTable(!editTable);
   };
-  const handleTraningStart = () => {
-    setTraningStart(!traningStart);
-  };
+
   return (
-    <>
-      {addRow && !editTable && <EditForm onClickEditButton={handleAddRowEnd} />}
-      {traningStart ? (
-        <div className={styles.mainContent}>
-          <CardContainer />
-          <Button
-            onClickButton={handleTraningStart}
-            textButton="Назад"
-            color="primary"
+    <Router>
+      <main className={styles.mainContent}>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                {addRow && !editTable && (<EditForm onClickEditButton={handleAddRowEnd} />)}
+                <WordList
+                  onClickEditButton={handleEditTable}
+                  editTableRow={editTable}
+                  addTableRow={addRow}
+                />
+                <div>
+                  <Button
+                    onClickButton={handleAddRowStart}
+                    textButton="Добавить слово"
+                    color="primary"
+                  />
+                  <Link to="/cards">
+                    <Button textButton="Тренироваться" color="secondary" />
+                  </Link>
+                </div>
+              </>
+            }
           />
-        </div>
-      ) : (
-        <>
-          <WordList
-            onClickEditButton={handleEditTable}
-            editTableRow={editTable}
-            addTableRow={addRow}
+          <Route
+            path="/cards"
+            element={
+              <>
+                <CardContainer />
+                <Link to="/">
+                  <Button textButton="Назад" color="primary" />
+                </Link>
+              </>
+            }
           />
-          {!addRow && (
-            <>
-              <Button
-                onClickButton={handleAddRowStart}
-                textButton="Добавить слово"
-                color="primary"
-              />
-              <Button
-                onClickButton={handleTraningStart}
-                textButton="Тренироваться"
-                color="secondary"
-              />
-            </>
-          )}
-        </>
-      )}
-    </>
+        </Routes>
+      </main>
+    </Router>
   );
 }
