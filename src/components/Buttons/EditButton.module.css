@@ -17,6 +17,12 @@
 .warning {
   background-color: var(--color-warning);
 }
+.primary {
+  background-color: var(--color-primary);
+}
+.secondary {
+  background-color: var(--color-secondary);
+}
 .success:hover {
   background-color: var(--color-success-hover);
 }
@@ -25,4 +31,10 @@
 }
 .warning:hover {
   background-color: var(--color-warning-hover);
+}
+.primary:hover {
+  background-color: var(--color-primary-hover);
+}
+.secondary:hover {
+  background-color: var(--color-secondary-hover);
 }

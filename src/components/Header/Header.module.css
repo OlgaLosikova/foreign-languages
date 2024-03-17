@@ -11,14 +11,19 @@
   background-color: var(--color-white);
 }
 .navigation {
+  flex-basis: 80%;
+}
+.ul {
   display: flex;
   list-style-type: none;
+  justify-content: space-between;
 }
-.navItem {
-  margin-left: var(--indentation-m);
+.ulItem {
+  display: flex;
+  align-items: center;
 }
-.navItem:hover {
-  text-decoration: underline;
+.link {
+  text-decoration: none;
 }
 .logoText {
   text-transform: uppercase;
