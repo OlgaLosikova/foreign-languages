@@ -33,9 +33,7 @@ export default function App() {
               path="/"
               element={
                 <>
-                  {addRow && !editTable && (
-                    <EditForm onClickEditButton={handleAddRowEnd} />
-                  )}
+                  {addRow && !editTable && (<EditForm onClickEditButton={handleAddRowEnd} />)}
                   <WordList
                     onClickEditButton={handleEditTable}
                     editTableRow={editTable}

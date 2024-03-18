@@ -6,13 +6,13 @@ import data from "../../words.json";
 
 
 export default function CardContainer() {
-  let [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0);
 
   const handleIndexIncrease = () => {
-    index < data.length - 1 ? setIndex(++index) : setIndex(0);
+    index < data.length - 1 ? setIndex(index+1) : setIndex(0);
   };
   const handleIndexReduce = () => {
-    index > 0 ? setIndex(--index) : setIndex(data.length - 1);
+    index > 0 ? setIndex(index-1) : setIndex(data.length - 1);
   };
 
   return (

@@ -5,13 +5,10 @@ import { useState, useEffect } from "react";
 import EditForm from "../EditForm/EditForm";
 
 export default function WordList(props) {
-  let {
-    editableWord,
-    editableTranscription,
-    editableTranslation,
+  const {
     onClickEditButton,
     editTableRow,
-    addTableRow
+    addTableRow,
   } = props;
   const [objList, setObjList] = useState(data);
   const [rowSelect, setRowSelect] = useState(false);
@@ -34,15 +31,12 @@ export default function WordList(props) {
     setHideButton(false);
   }, [editTableRow]);
   const table = objList.map((item) => {
-    editableWord = item.english;
-    editableTranscription = item.transcription;
-    editableTranslation = item.russian;
     let tableRow;
     if (!item.isEdit) {
-      if (!hideButton&&!addTableRow) {
+      if (!hideButton && !addTableRow) {
         tableRow = (
           <>
-            <td className={styles.td}>{item.english}</td>
+            <td  className={styles.td}>{item.english}</td>
             <td className={styles.td}>{item.transcription}</td>
             <td className={styles.td}>{item.russian}</td>
             <td>
@@ -66,9 +60,9 @@ export default function WordList(props) {
     } else {
       tableRow = (
         <EditForm
-          editableWord={editableWord}
-          editableTranscription={editableTranscription}
-          editableTranslation={editableTranslation}
+          editableWord={item.english}
+          editableTranscription={item.transcription}
+          editableTranslation={item.russian}
           rowSelect={rowSelect}
           onClickEditButton={onClickEditButton}
         />

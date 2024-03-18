@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export default function Header({onClickEditButton}) {
-  let [page, setPage] = useState(false);
+  const [page, setPage] = useState(false);
   const handleSetPage = () => {
     setPage(!page);
   };
