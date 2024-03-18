@@ -1,15 +1,11 @@
 import styles from "./WordList.module.css";
 import data from "../../words.json";
-import EditButton from "../Buttons/EditButton";
 import { useState, useEffect } from "react";
 import EditForm from "../EditForm/EditForm";
+import Row from "../Row/Row";
 
 export default function WordList(props) {
-  const {
-    onClickEditButton,
-    editTableRow,
-    addTableRow,
-  } = props;
+  const { onClickEditButton, editTableRow, addTableRow } = props;
   const [objList, setObjList] = useState(data);
   const [rowSelect, setRowSelect] = useState(false);
   const [hideButton, setHideButton] = useState(false);
@@ -33,33 +29,21 @@ export default function WordList(props) {
   const table = objList.map((item) => {
     let tableRow;
     if (!item.isEdit) {
-      if (!hideButton && !addTableRow) {
-        tableRow = (
-          <>
-            <td  className={styles.td}>{item.english}</td>
-            <td className={styles.td}>{item.transcription}</td>
-            <td className={styles.td}>{item.russian}</td>
-            <td>
-              <EditButton
-                color="warning"
-                icon="edit"
-                onClickEditButton={() => handleRowEdit(item.id)}
-              />
-            </td>
-          </>
-        );
-      } else {
-        tableRow = (
-          <>
-            <td className={styles.td}>{item.english}</td>
-            <td className={styles.td}>{item.transcription}</td>
-            <td className={styles.td}>{item.russian}</td>
-          </>
-        );
-      }
+      tableRow = (
+        <Row
+          key={item.id}
+          hideButton={hideButton}
+          addTableRow={addTableRow}
+          onClickEditButton={() => handleRowEdit(item.id)}
+          word={item.english}
+          transcription={item.transcription}
+          translation={item.russian}
+        />
+      );
     } else {
       tableRow = (
         <EditForm
+          key={item.id}
           editableWord={item.english}
           editableTranscription={item.transcription}
           editableTranslation={item.russian}
@@ -68,11 +52,7 @@ export default function WordList(props) {
         />
       );
     }
-    return (
-      <tr key={item.id} className={styles.tr} id={item.id}>
-        {tableRow}
-      </tr>
-    );
+    return <>{tableRow}</>;
   });
   return (
     <table className={styles.table}>

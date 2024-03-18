@@ -3,6 +3,7 @@
   border-color: var(--color-gray);
   margin-left: var(--indentation-s);
   font-size: medium;
-  width: 16vw;
-  text-align: center;
+  width: 65%;
+  text-align: left;
+  padding-left: var(--indentation-m);
 }

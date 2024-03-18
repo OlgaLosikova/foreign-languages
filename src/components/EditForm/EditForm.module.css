@@ -6,12 +6,15 @@
   align-items: center;
   margin: var(--indentation-3xl) 20% 0;
   padding-right: var(--indentation-l);
+  width: 59%;
 }
 .editFormExisting {
   margin: 0;
+  width: 100%;
 }
 .inputGroup {
   display: flex;
   justify-content: flex-start;
   margin-right: 45px;
+  width: 77%;
 }
