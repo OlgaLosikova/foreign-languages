@@ -4,7 +4,7 @@ import styles from "./Header.module.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export default function Header({onClickEditButton}) {
+export default function Header({ onClickEditButton }) {
   const [page, setPage] = useState(false);
   const handleSetPage = () => {
     setPage(!page);
@@ -15,33 +15,33 @@ export default function Header({onClickEditButton}) {
         <p className={styles.logoText}>Learn English</p>
       </div>
       <nav className={styles.navigation}>
-        <ul className={styles.ul}>
-          <div className={styles.ulItem}>
-            {page ? (
-              <Link to="/" className={styles.link}>
+        <div className={styles.ulItem}>
+          {page ? (
+            <Link to="/" className={styles.link}>
+              <EditButton
+                onClickEditButton={handleSetPage}
+                textButton="К списку слов"
+                color="primary"
+              />
+            </Link>
+          ) : (
+            <>
+              <EditButton
+                onClickEditButton={onClickEditButton}
+                textButton="Добавить слово"
+                color="primary"
+              />
+              <Link to="/cards" className={styles.link}>
                 <EditButton
                   onClickEditButton={handleSetPage}
-                  textButton="К списку слов"
-                  color="primary"
+                  textButton="Тренироваться"
+                  color="secondary"
                 />
               </Link>
-            ) : (
-              <>
-                <EditButton
-                  onClickEditButton={onClickEditButton}
-                  textButton="Добавить слово"
-                  color="primary"
-                />
-                <Link to="/cards" className={styles.link}>
-                  <EditButton
-                    onClickEditButton={handleSetPage}
-                    textButton="Тренироваться"
-                    color="secondary"
-                  />
-                </Link>
-              </>
-            )}
-          </div>
+            </>
+          )}
+        </div>
+        <ul className={styles.ul}>
           <div className={styles.ulItem}>
             <MenuItem textMenu="Зарегистрироваться" />
             <MenuItem textMenu="Войти" />

@@ -39,6 +39,7 @@ code {
   --line-height-l: 3rem;
   --line-height-m: 2rem;
   --line-height-s: 1.5rem;
+  --indentation-xs:5px;
   --indentation-s: 10px;
   --indentation-m: 15px;
   --indentation-l: 20px;

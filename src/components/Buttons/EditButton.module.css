@@ -6,7 +6,7 @@
   border: 0;
   font-size: medium;
   color: var(--color-white);
-  margin-left: var(--indentation-s);
+  margin: var(--indentation-s) 0 var(--indentation-s) var(--indentation-s);
 }
 .success {
   background-color: var(--color-success);
