@@ -1,15 +1,17 @@
 import EditButton from "../Buttons/EditButton";
 import EditForm from "../EditForm/EditForm";
 import styles from "./Row.module.css";
-import { useState} from "react";
+import { useState } from "react";
 
 export default function Row(props) {
-  const { word, transcription, translation, addTableRow } = props;
+  const { word, transcription, translation, addTableRow, onClickEditButton, hideButton } = props;
   const [rowSelect, setRowSelect] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
+
   const handleSetEdit = () => {
     setIsEdit(!isEdit);
     setRowSelect(!rowSelect);
+    onClickEditButton(true);
   };
 
   let tableRow;
@@ -25,7 +27,7 @@ export default function Row(props) {
       />
     );
   else {
-    if (!addTableRow)
+    if (!addTableRow&&!hideButton)
       tableCell = (
         <td className={styles.td}>
           <EditButton

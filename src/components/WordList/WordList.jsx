@@ -3,7 +3,7 @@ import data from "../../words.json";
 import Row from "../Row/Row";
 
 export default function WordList(props) {
-  const { addTableRow } = props;
+  const { addTableRow, onEdit, hideButton,onClickEditButton } = props;
 
   return (
     <table className={styles.table}>
@@ -16,10 +16,12 @@ export default function WordList(props) {
               word={item.english}
               transcription={item.transcription}
               translation={item.russian}
+              onEdit={onEdit}
+              hideButton={hideButton}
+              onClickEditButton={onClickEditButton}
             />
           );
         })}
-        ;
       </tbody>
     </table>
   );

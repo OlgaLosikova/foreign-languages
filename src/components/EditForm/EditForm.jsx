@@ -13,7 +13,7 @@ export default function EditForm(props) {
   } = props;
   const editStyle = cn(styles.editForm, rowSelect && styles.editFormExisting);
   return (
-    <tr className={editStyle}>
+    <div className={editStyle}>
       <div className={styles.inputGroup}>
         <Input value={editableWord} placeholderText="Слово" />
         <Input value={editableTranscription} placeholderText="Транскрипция" />
@@ -31,6 +31,6 @@ export default function EditForm(props) {
           icon="delete"
         />
       </>
-    </tr>
+    </div>
   );
 }

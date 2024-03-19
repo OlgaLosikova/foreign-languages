@@ -9,26 +9,33 @@ import Missing from "./components/Missing/Missing";
 
 export default function App() {
   const [addRow, setAddRow] = useState(false);
-
+  const [hideButton, setHideButton] = useState(false);
   const handleAddRowStart = () => {
     setAddRow(true);
   };
   const handleAddRowEnd = () => {
     setAddRow(false);
   };
-
+  const handleSetEdit = () => {
+    setHideButton(!hideButton);
+  };
   return (
     <div className="App">
       <Router>
-        <Header onClickEditButton={handleAddRowStart}/>
+        <Header onClickEditButton={handleAddRowStart} />
         <main>
           <Routes>
             <Route
               path="/"
               element={
                 <>
-                  {addRow && <EditForm onClickEditButton={handleAddRowEnd}  />}
-                  <WordList addTableRow={addRow}/>
+                  {addRow && <EditForm onClickEditButton={handleAddRowEnd} />}
+                  <WordList
+                    onClickEditButton={handleSetEdit}
+                    hideButton={hideButton}
+                    addTableRow={addRow}
+                    
+                  />
                 </>
               }
             />
