@@ -11,7 +11,7 @@ export default function Row(props) {
   const handleSetEdit = () => {
     setIsEdit(!isEdit);
     setRowSelect(!rowSelect);
-    onClickEditButton(true);
+    onClickEditButton();
   };
 
   let tableRow;

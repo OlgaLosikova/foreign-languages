@@ -3,7 +3,7 @@ import data from "../../words.json";
 import Row from "../Row/Row";
 
 export default function WordList(props) {
-  const { addTableRow, onEdit, hideButton,onClickEditButton } = props;
+  const { addTableRow, onEdit, hideButton, onClickEditButton } = props;
 
   return (
     <table className={styles.table}>
