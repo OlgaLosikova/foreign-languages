@@ -1,5 +1,4 @@
 .tableBody {
-  background-color: var(--color-white);
   display: flex;
   flex-wrap: wrap;
   margin: 0 0 var(--indentation-3xl) 0;

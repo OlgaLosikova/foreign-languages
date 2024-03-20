@@ -6,8 +6,7 @@ export default function WordList(props) {
   const { addTableRow, onEdit, hideButton, onClickEditButton } = props;
 
   return (
-    <table className={styles.table}>
-      <tbody className={styles.tableBody}>
+    <div className={styles.table}>
         {data.map((item) => {
           return (
             <Row
@@ -22,7 +21,6 @@ export default function WordList(props) {
             />
           );
         })}
-      </tbody>
-    </table>
+    </div>
   );
 }

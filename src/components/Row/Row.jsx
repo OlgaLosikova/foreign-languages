@@ -29,22 +29,22 @@ export default function Row(props) {
   else {
     if (!addTableRow&&!hideButton)
       tableCell = (
-        <td className={styles.td}>
+        <div className={styles.td}>
           <EditButton
             color="warning"
             icon="edit"
             onClickEditButton={handleSetEdit}
           />
-        </td>
+        </div>
       );
-    else tableCell = <td className={styles.td}></td>;
+    else tableCell = <div className={styles.td}></div>;
     return (
-      <tr className={styles.tr}>
-        <td className={styles.td}>{word}</td>
-        <td className={styles.td}>{transcription}</td>
-        <td className={styles.td}>{translation}</td>
+      <div className={styles.tr}>
+        <div className={styles.td}>{word}</div>
+        <div className={styles.td}>{transcription}</div>
+        <div className={styles.td}>{translation}</div>
         {tableCell}
-      </tr>
+      </div>
     );
   }
   return <>{tableRow}</>;

@@ -10,7 +10,7 @@ export default function Header({ onClickEditButton }) {
     setPage(!page);
   };
   return (
-    <header className={styles.header}>
+    <header className={styles.header} >
       <div className={styles.logo}>
         <p className={styles.logoText}>Learn English</p>
       </div>

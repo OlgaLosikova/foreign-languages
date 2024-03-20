@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: space-around;
   height: var(--line-height-l);
+  background-color: var(--color-white);
 }
 .td {
   font-size: medium;

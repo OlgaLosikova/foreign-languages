@@ -5,8 +5,7 @@
   justify-content: flex-start;
   align-items: center;
   margin: var(--indentation-3xl) 20% 0;
-  padding-right: var(--indentation-l);
-  width: 59%;
+  width: 60%;
 }
 .editFormExisting {
   margin: 0;
