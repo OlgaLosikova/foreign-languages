@@ -7,7 +7,7 @@ export default function EditButton(props) {
 
   return (
     <button onClick={onClickEditButton} className={buttonStyle}>
-      <span class="material-symbols-outlined">{icon}</span>
+      <span className="material-symbols-outlined">{icon}</span>
       {textButton}
     </button>
   );

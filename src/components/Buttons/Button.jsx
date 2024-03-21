@@ -6,7 +6,7 @@ export default function NavButton(props) {
   const buttonStyle = cn(styles.button, styles[color]);
 
   return (
-    <button onClick={onClickButton} className={buttonStyle}><span class="material-symbols-outlined">{icon}</span>
+    <button onClick={onClickButton} className={buttonStyle}><span className="material-symbols-outlined">{icon}</span>
       {textButton}
     </button>
   );
