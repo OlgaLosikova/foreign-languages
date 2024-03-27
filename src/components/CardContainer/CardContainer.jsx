@@ -20,11 +20,10 @@ export default function CardContainer() {
       setWorldsLearned([...wordsLearned, id]);
       setCount(count + 1);
     }
-    
   };
   return (
     <>
-      <h1>Изучено карточек: {count} </h1>
+      <h1 className={styles.h1}>Изучено карточек: {count} </h1>
       <div className={styles.cardContainer}>
         <Button
           onClickButton={handleIndexReduce}

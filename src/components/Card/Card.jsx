@@ -1,9 +1,10 @@
 import styles from "./Card.module.css";
 import EditButton from "../Buttons/EditButton";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import data from "../../words.json";
 
 export default function Card({ cardIndex, onClickEditButton }) {
+  const buttonRef = useRef();
   const [checkTranslation, setCheckTranslation] = useState(false);
 
   const handleCheckTranslation = () => {
@@ -13,6 +14,9 @@ export default function Card({ cardIndex, onClickEditButton }) {
   useEffect(() => {
     setCheckTranslation(false);
   }, [cardIndex]);
+  useEffect(() => {
+    buttonRef.current.focus();
+  }, []);
   return (
     <div className={styles.card} key={data[cardIndex].id}>
       <p className={styles.title}>{data[cardIndex].english}</p>
@@ -25,6 +29,7 @@ export default function Card({ cardIndex, onClickEditButton }) {
             onClickEditButton={handleCheckTranslation}
             textButton="Проверить"
             color="success"
+            ref={buttonRef}
           />
         )}
       </div>
