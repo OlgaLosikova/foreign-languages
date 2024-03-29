@@ -25,7 +25,7 @@ export default function Header({ onClickEditButton }) {
                 color="primary"
               />
               <Link to="/cards" className={styles.link}>
-                <EditButton textButton="Тренироваться" color="secondary"  />
+                <EditButton textButton="Тренироваться" color="secondary" />
               </Link>
             </>
           )}
