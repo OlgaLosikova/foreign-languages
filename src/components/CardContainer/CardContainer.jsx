@@ -32,7 +32,6 @@ export default function CardContainer() {
         />
         <Card
           cardIndex={index}
-          handleSetCount={handleSetCount}
           onClickEditButton={handleSetCount}
         />
         <Button

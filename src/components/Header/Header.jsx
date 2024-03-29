@@ -1,28 +1,21 @@
 import EditButton from "../Buttons/EditButton";
 import MenuItem from "../ListItem/MenuItem";
 import styles from "./Header.module.css";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Header({ onClickEditButton }) {
-  const [page, setPage] = useState(false);
-  const handleSetPage = () => {
-    setPage(!page);
-  };
+  const location = useLocation();
+
   return (
-    <header className={styles.header} >
+    <header className={styles.header}>
       <div className={styles.logo}>
         <p className={styles.logoText}>Learn English</p>
       </div>
       <nav className={styles.navigation}>
         <div className={styles.ulItem}>
-          {page ? (
+          {location.pathname === "/cards" ? (
             <Link to="/" className={styles.link}>
-              <EditButton
-                onClickEditButton={handleSetPage}
-                textButton="К списку слов"
-                color="primary"
-              />
+              <EditButton textButton="К списку слов" color="primary" />
             </Link>
           ) : (
             <>
@@ -32,11 +25,7 @@ export default function Header({ onClickEditButton }) {
                 color="primary"
               />
               <Link to="/cards" className={styles.link}>
-                <EditButton
-                  onClickEditButton={handleSetPage}
-                  textButton="Тренироваться"
-                  color="secondary"
-                />
+                <EditButton textButton="Тренироваться" color="secondary"  />
               </Link>
             </>
           )}

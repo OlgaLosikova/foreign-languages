@@ -4,12 +4,18 @@ import { useState } from "react";
 import EditForm from "./components/EditForm/EditForm";
 import WordList from "./components/WordList/WordList";
 import CardContainer from "./components/CardContainer/CardContainer";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 import Missing from "./components/Missing/Missing";
 
 export default function App() {
+
   const [addRow, setAddRow] = useState(false);
   const [hideButton, setHideButton] = useState(false);
+
   const handleAddRowStart = () => {
     setAddRow(true);
   };
@@ -34,7 +40,6 @@ export default function App() {
                     onClickEditButton={handleSetEdit}
                     hideButton={hideButton}
                     addTableRow={addRow}
-                    
                   />
                 </>
               }
