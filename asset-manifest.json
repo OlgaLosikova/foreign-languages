@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.6e129462.css",
-    "main.js": "/static/js/main.fa15f851.js",
-    "static/media/gilroy-semibold.woff": "/static/media/gilroy-semibold.e38937dbf8202c144802.woff",
-    "static/media/gilroy-semibold.woff2": "/static/media/gilroy-semibold.732e892b20ef917f09ae.woff2",
-    "index.html": "/index.html",
-    "main.6e129462.css.map": "/static/css/main.6e129462.css.map",
-    "main.fa15f851.js.map": "/static/js/main.fa15f851.js.map"
+    "main.css": "/foreign-languages/static/css/main.78086930.css",
+    "main.js": "/foreign-languages/static/js/main.fa15f851.js",
+    "static/media/gilroy-semibold.woff": "/foreign-languages/static/media/gilroy-semibold.e38937dbf8202c144802.woff",
+    "static/media/gilroy-semibold.woff2": "/foreign-languages/static/media/gilroy-semibold.732e892b20ef917f09ae.woff2",
+    "index.html": "/foreign-languages/index.html",
+    "main.78086930.css.map": "/foreign-languages/static/css/main.78086930.css.map",
+    "main.fa15f851.js.map": "/foreign-languages/static/js/main.fa15f851.js.map"
   },
   "entrypoints": [
-    "static/css/main.6e129462.css",
+    "static/css/main.78086930.css",
     "static/js/main.fa15f851.js"
   ]
 }
