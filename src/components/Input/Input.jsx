@@ -1,5 +1,15 @@
 import styles from "./Input.module.css";
+import cn from "classnames";
 export default function Input(props) {
-  const {placeholderText,value}=props;
-  return <input type="text" className={styles.input} placeholder={placeholderText} defaultValue={value}/>;
+  const { placeholderText, value, onChange, danger } = props;
+  const inputStyle = cn(styles.input, danger && styles.danger);
+  return (
+    <input
+      type="text"
+      className={inputStyle}
+      placeholder={placeholderText}
+      value={value}
+      onChange={onChange}
+    />
+  );
 }

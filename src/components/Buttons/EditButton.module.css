@@ -8,6 +8,7 @@
   color: var(--color-white);
   margin: var(--indentation-s) 0 var(--indentation-s) var(--indentation-s);
 }
+
 .success {
   background-color: var(--color-success);
 }
@@ -37,4 +38,7 @@
 }
 .secondary:hover {
   background-color: var(--color-secondary-hover);
+}
+.button:disabled{
+  background-color: var(--color-gray);
 }
