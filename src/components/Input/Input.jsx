@@ -1,7 +1,7 @@
 import styles from "./Input.module.css";
 import cn from "classnames";
 export default function Input(props) {
-  const { placeholderText, value, onChange, danger } = props;
+  const { placeholderText, value, onChange, danger, onBlur } = props;
   const inputStyle = cn(styles.input, danger && styles.danger);
   return (
     <input
@@ -10,6 +10,7 @@ export default function Input(props) {
       placeholder={placeholderText}
       value={value}
       onChange={onChange}
+      onBlur={onBlur}
     />
   );
 }
