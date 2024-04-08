@@ -3,7 +3,7 @@ import MenuItem from "../ListItem/MenuItem";
 import styles from "./Header.module.css";
 import { Link, useLocation } from "react-router-dom";
 
-export default function Header({ onClickEditButton }) {
+export default function Header({ onClickEditButton, disabled }) {
   const location = useLocation();
 
   return (
@@ -23,6 +23,7 @@ export default function Header({ onClickEditButton }) {
                 onClickEditButton={onClickEditButton}
                 textButton="Добавить слово"
                 color="primary"
+                disabled={disabled}
               />
               <Link to="/cards" className={styles.link}>
                 <EditButton textButton="Тренироваться" color="secondary" />

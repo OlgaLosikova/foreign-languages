@@ -28,7 +28,7 @@ export default function App() {
   return (
     <div className="App">
       <Router>
-        <Header onClickEditButton={handleAddRowStart} />
+        <Header onClickEditButton={handleAddRowStart} disabled={hideButton} />
         <main>
           <Routes>
             <Route
@@ -40,6 +40,7 @@ export default function App() {
                     onClickEditButton={handleSetEdit}
                     hideButton={hideButton}
                     addTableRow={addRow}
+                    
                   />
                 </>
               }
