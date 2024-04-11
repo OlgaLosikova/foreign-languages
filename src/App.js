@@ -5,7 +5,7 @@ import EditForm from "./components/EditForm/EditForm";
 import WordList from "./components/WordList/WordList";
 import CardContainer from "./components/CardContainer/CardContainer";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route
 } from "react-router-dom";
