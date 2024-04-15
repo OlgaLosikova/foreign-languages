@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "proxy": "http://itgirlschool.justmakeit.ru",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://olgalosikova.github.io/foreign-languages/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
