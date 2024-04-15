@@ -85,7 +85,7 @@ export default function App() {
           addWord,
         }}
       >
-        <Router>
+        <Router >
           <Header onClickEditButton={handleAddRowStart} />
           <main>
             <Routes>
