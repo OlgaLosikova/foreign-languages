@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "./https://olgalosikova.github.io/foreign-languages/static/css/main.56315f9b.css",
-    "main.js": "./https://olgalosikova.github.io/foreign-languages/static/js/main.1021dc1a.js",
-    "static/media/gilroy-semibold.woff": "./https://olgalosikova.github.io/foreign-languages/static/media/gilroy-semibold.e38937dbf8202c144802.woff",
-    "static/media/gilroy-semibold.woff2": "./https://olgalosikova.github.io/foreign-languages/static/media/gilroy-semibold.732e892b20ef917f09ae.woff2",
-    "index.html": "./https://olgalosikova.github.io/foreign-languages/index.html",
-    "main.56315f9b.css.map": "./https://olgalosikova.github.io/foreign-languages/static/css/main.56315f9b.css.map",
-    "main.1021dc1a.js.map": "./https://olgalosikova.github.io/foreign-languages/static/js/main.1021dc1a.js.map"
+    "main.css": "/foreign-languages/static/css/main.f46ef65f.css",
+    "main.js": "/foreign-languages/static/js/main.1021dc1a.js",
+    "static/media/gilroy-semibold.woff": "/foreign-languages/static/media/gilroy-semibold.e38937dbf8202c144802.woff",
+    "static/media/gilroy-semibold.woff2": "/foreign-languages/static/media/gilroy-semibold.732e892b20ef917f09ae.woff2",
+    "index.html": "/foreign-languages/index.html",
+    "main.f46ef65f.css.map": "/foreign-languages/static/css/main.f46ef65f.css.map",
+    "main.1021dc1a.js.map": "/foreign-languages/static/js/main.1021dc1a.js.map"
   },
   "entrypoints": [
-    "static/css/main.56315f9b.css",
+    "static/css/main.f46ef65f.css",
     "static/js/main.1021dc1a.js"
   ]
 }
