@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import EditForm from "./components/EditForm/EditForm";
 import WordList from "./components/WordList/WordList";
 import CardContainer from "./components/CardContainer/CardContainer";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter , Routes, Route } from "react-router-dom";
 import Missing from "./components/Missing/Missing";
 import Context from "./Context/DataContext";
 
@@ -85,7 +85,7 @@ export default function App() {
           addWord,
         }}
       >
-        <Router >
+        <HashRouter >
           <Header onClickEditButton={handleAddRowStart} />
           <main>
             <Routes>
@@ -102,7 +102,7 @@ export default function App() {
               <Route path="*" element={<Missing />} />
             </Routes>
           </main>
-        </Router>
+        </HashRouter>
       </Context.Provider>
     </div>
   );
