@@ -1,15 +1,16 @@
 {
   "files": {
     "main.css": "/foreign-languages/static/css/main.f46ef65f.css",
-    "main.js": "/foreign-languages/static/js/main.7e218637.js",
+    "main.js": "/foreign-languages/static/js/main.241b2ed7.js",
+    "static/media/404.png": "/foreign-languages/static/media/404.59e1c5802d725ef180dd.png",
     "static/media/gilroy-semibold.woff": "/foreign-languages/static/media/gilroy-semibold.e38937dbf8202c144802.woff",
     "static/media/gilroy-semibold.woff2": "/foreign-languages/static/media/gilroy-semibold.732e892b20ef917f09ae.woff2",
     "index.html": "/foreign-languages/index.html",
     "main.f46ef65f.css.map": "/foreign-languages/static/css/main.f46ef65f.css.map",
-    "main.7e218637.js.map": "/foreign-languages/static/js/main.7e218637.js.map"
+    "main.241b2ed7.js.map": "/foreign-languages/static/js/main.241b2ed7.js.map"
   },
   "entrypoints": [
     "static/css/main.f46ef65f.css",
-    "static/js/main.7e218637.js"
+    "static/js/main.241b2ed7.js"
   ]
 }
