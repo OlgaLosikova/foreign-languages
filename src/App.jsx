@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import EditForm from "./components/EditForm/EditForm";
 import WordList from "./components/WordList/WordList";
 import CardContainer from "./components/CardContainer/CardContainer";
-import { HashRouter , Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Missing from "./components/Missing/Missing";
 import Context from "./Context/DataContext";
 
@@ -14,7 +14,7 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [words, setWords] = useState([]);
   const [err, setErr] = useState(null);
-  const baseUrl="https://itgirlschool.justmakeit.ru/";
+  const baseUrl = "https://itgirlschool.justmakeit.ru";
   const fetchWords = async () => {
     try {
       const response = await fetch(`${baseUrl}/api/words`).then((response) => {
@@ -54,9 +54,6 @@ export default function App() {
   const addWord = async (addedWord) => {
     const response = await fetch(`${baseUrl}/api/words/add`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
       body: JSON.stringify(addedWord),
     });
     const data = await response.json();
@@ -86,7 +83,7 @@ export default function App() {
           addWord,
         }}
       >
-        <HashRouter >
+        <HashRouter>
           <Header onClickEditButton={handleAddRowStart} />
           <main>
             <Routes>

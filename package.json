@@ -1,7 +1,7 @@
 {
   "name": "foreign-languages",
   "version": "0.1.0",
-  "proxy": "http://itgirlschool.justmakeit.ru",
+  "proxy": "https://itgirlschool.justmakeit.ru",
   "private": true,
   "homepage": "https://olgalosikova.github.io/foreign-languages/",
   "dependencies": {
@@ -9,6 +9,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "classnames": "^2.5.1",
+    "cors": "^2.8.5",
     "json-loader": "^0.5.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
