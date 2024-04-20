@@ -1,15 +1,19 @@
 import Button from "../Buttons/Button";
 import Card from "../Card/Card";
 import styles from "./CardContainer.module.css";
-import { useContext, useState } from "react";
-import Context from "../../Context/DataContext";
+import {  useState, useEffect } from "react";
+import store from "../../stores/WordsStore";
 import Loading from "../Loading/Loading";
 import Error from "../Error/Error";
-export default function CardContainer() {
+import { observer } from "mobx-react-lite";
+const CardContainer=observer(()=>{
   const [index, setIndex] = useState(0);
   const [count, setCount] = useState(0);
   const [wordsLearned, setWorldsLearned] = useState([]);
-  const {words,loading, err}=useContext(Context);
+const {words, loading,err, fetchWords}=store;
+useEffect(() => {
+  fetchWords();
+}, [fetchWords]);
   const handleIndexIncrease = () => {
     index < words.length - 1 ? setIndex(index + 1) : setIndex(0);
   };
@@ -49,3 +53,5 @@ export default function CardContainer() {
     </>
   );
 }
+)
+export default CardContainer;

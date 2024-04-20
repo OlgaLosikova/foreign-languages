@@ -1,12 +1,13 @@
 import styles from "./Card.module.css";
 import EditButton from "../Buttons/EditButton";
-import React, { useState, useEffect, useRef, useContext} from "react";
-import Context from "../../Context/DataContext";
+import React, { useState, useEffect, useRef } from "react";
+import store from "../../stores/WordsStore";
+import { observer } from "mobx-react-lite";
 
-export default function Card({ cardIndex, onClickEditButton }) {
+const Card=observer(({ cardIndex, onClickEditButton }) =>{
   const buttonRef = useRef();
   const [checkTranslation, setCheckTranslation] = useState(false);
-  const {words}=useContext(Context);
+  const { words } = store;
   const handleCheckTranslation = () => {
     setCheckTranslation(true);
     onClickEditButton(words[cardIndex].id);
@@ -36,3 +37,5 @@ export default function Card({ cardIndex, onClickEditButton }) {
     </div>
   );
 }
+)
+export default Card

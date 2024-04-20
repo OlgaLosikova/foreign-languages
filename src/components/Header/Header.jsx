@@ -1,13 +1,13 @@
-import { useContext } from "react";
+import { observer } from "mobx-react-lite";
+import store from "../../stores/WordsStore";
 import EditButton from "../Buttons/EditButton";
 import MenuItem from "../ListItem/MenuItem";
 import styles from "./Header.module.css";
 import { Link, useLocation } from "react-router-dom";
-import Context from "../../Context/DataContext";
 
-export default function Header({ onClickEditButton}) {
+const Header = observer(({ onClickEditButton }) => {
   const location = useLocation();
-  const { hideButton } = useContext(Context);
+  const { hideButton } = store;
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -42,4 +42,5 @@ export default function Header({ onClickEditButton}) {
       </nav>
     </header>
   );
-}
+});
+export default Header;

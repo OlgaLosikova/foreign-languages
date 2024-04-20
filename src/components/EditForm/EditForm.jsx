@@ -3,10 +3,10 @@ import EditButton from "../Buttons/EditButton";
 import Input from "../Input/Input";
 import cn from "classnames";
 import useInputChecking from "../../hooks/useInputChecking";
-import { useContext } from "react";
-import Context from "../../Context/DataContext";
-export default function EditForm(props) {
-  const { updateWord, addWord } = useContext(Context);
+import store from "../../stores/WordsStore";
+import { observer } from "mobx-react-lite";
+const EditForm = observer((props) => {
+  const { updateWord, addWord } = store;
   const {
     onClickEditButton,
     rowSelect,
@@ -60,11 +60,17 @@ export default function EditForm(props) {
     ? (disabled = true)
     : (disabled = false);
   const handleSave = () => {
-    const updatedWord = { english, transcription, russian, id:wordId,tags:"" };
-        emptyInputWord && emptyInputTranscription && emptyInputTranslation
+    const updatedWord = {
+      english,
+      transcription,
+      russian,
+      id: wordId,
+      tags: "",
+    };
+    emptyInputWord && emptyInputTranscription && emptyInputTranslation
       ? addWord(updatedWord)
       : updateWord(updatedWord, wordId);
-      onClickEditButton();
+    onClickEditButton();
   };
   return (
     <div className={editStyle}>
@@ -106,4 +112,5 @@ export default function EditForm(props) {
       </>
     </div>
   );
-}
+});
+export default EditForm;

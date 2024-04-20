@@ -1,12 +1,13 @@
-import Context from "../../Context/DataContext";
+import { observer } from "mobx-react-lite";
+import store from "../../stores/WordsStore";
 import EditButton from "../Buttons/EditButton";
 import EditForm from "../EditForm/EditForm";
 import styles from "./Row.module.css";
-import { useContext, useState } from "react";
+import { useState } from "react";
 
-export default function Row(props) {
+const Row = observer((props) => {
   const { word, transcription, translation, onClickEditButton, wordId } = props;
-  const { hideButton, addRow, deleteWord } = useContext(Context);
+  const { hideButton, addRow, deleteWord } = store;
   const [rowSelect, setRowSelect] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
 
@@ -58,4 +59,5 @@ export default function Row(props) {
     );
   }
   return <>{tableRow}</>;
-}
+});
+export default Row;
