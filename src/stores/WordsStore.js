@@ -11,7 +11,7 @@ class WordsStore {
   }
   fetchWords = async () => {
     try {
-      const response = await fetch(`${baseUrl}/api/wordsu`);
+      const response = await fetch(`${baseUrl}/api/words`);
       if (response.ok) {
         const data = await response.json();
         this.words = data;
