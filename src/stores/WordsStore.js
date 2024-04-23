@@ -1,4 +1,4 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable, runInAction } from "mobx";
 const baseUrl = "https://itgirlschool.justmakeit.ru";
 class WordsStore {
   words = [];
@@ -14,12 +14,16 @@ class WordsStore {
       const response = await fetch(`${baseUrl}/api/words`);
       if (response.ok) {
         const data = await response.json();
-        this.words = data;
-        this.loading = false;
-      } 
+        runInAction(() => {
+          this.words = data;
+          this.loading = false;
+        });
+      }
     } catch (err) {
-      this.err = new Error("Что-то пошло не так...");
-      this.loading = false;
+      runInAction(() => {
+        this.err = new Error("Что-то пошло не так...");
+        this.loading = false;
+      });
     }
   };
   addWord = async (addedWord) => {
@@ -55,9 +59,9 @@ class WordsStore {
   setAddRowEnd = () => {
     this.addRow = false;
   };
-  setHideButton=()=>{
-    this.hideButton=!this.hideButton;
-  }
+  setHideButton = () => {
+    this.hideButton = !this.hideButton;
+  };
 }
 
 const store = new WordsStore();
