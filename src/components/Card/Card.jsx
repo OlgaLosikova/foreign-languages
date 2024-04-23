@@ -1,12 +1,12 @@
 import styles from "./Card.module.css";
 import EditButton from "../Buttons/EditButton";
 import React, { useState, useEffect, useRef, useContext} from "react";
-import Context from "../../Context/DataContext";
+import { WordsContext } from "../../Context/DataContext";
 
 export default function Card({ cardIndex, onClickEditButton }) {
   const buttonRef = useRef();
   const [checkTranslation, setCheckTranslation] = useState(false);
-  const {words}=useContext(Context);
+  const {words}=useContext(WordsContext);
   const handleCheckTranslation = () => {
     setCheckTranslation(true);
     onClickEditButton(words[cardIndex].id);

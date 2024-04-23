@@ -3,11 +3,12 @@ import EditButton from "../Buttons/EditButton";
 import MenuItem from "../ListItem/MenuItem";
 import styles from "./Header.module.css";
 import { Link, useLocation } from "react-router-dom";
-import Context from "../../Context/DataContext";
+import { WordsContext } from "../../Context/DataContext";
 
-export default function Header({ onClickEditButton}) {
+export default function Header({ onClickEditButton }) {
   const location = useLocation();
-  const { hideButton } = useContext(Context);
+  const { hideButton } = useContext(WordsContext);
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}>

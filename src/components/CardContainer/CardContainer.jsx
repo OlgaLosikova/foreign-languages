@@ -1,15 +1,18 @@
 import Button from "../Buttons/Button";
 import Card from "../Card/Card";
 import styles from "./CardContainer.module.css";
-import { useContext, useState } from "react";
-import Context from "../../Context/DataContext";
+import { useContext, useState, useEffect } from "react";
 import Loading from "../Loading/Loading";
 import Error from "../Error/Error";
+import { WordsContext } from "../../Context/DataContext";
 export default function CardContainer() {
   const [index, setIndex] = useState(0);
   const [count, setCount] = useState(0);
   const [wordsLearned, setWorldsLearned] = useState([]);
-  const {words,loading, err}=useContext(Context);
+  const { words, loading, err, fetchWords } = useContext(WordsContext);
+  useEffect(() => {
+    fetchWords();
+  }, [fetchWords]);
   const handleIndexIncrease = () => {
     index < words.length - 1 ? setIndex(index + 1) : setIndex(0);
   };
@@ -25,27 +28,24 @@ export default function CardContainer() {
   if (loading) {
     return <Loading />;
   } else if (err) {
-    return <Error errorMessage={err.message}/>;
+    return <Error errorMessage={err.message} />;
   } else
-  return (
-    <>
-      <h1 className={styles.h1}>Изучено карточек: {count} </h1>
-      <div className={styles.cardContainer}>
-        <Button
-          onClickButton={handleIndexReduce}
-          icon="Arrow_Back"
-          color="secondary"
-        />
-        <Card
-          cardIndex={index}
-          onClickEditButton={handleSetCount}
-        />
-        <Button
-          onClickButton={handleIndexIncrease}
-          icon="Arrow_Forward"
-          color="secondary"
-        />
-      </div>
-    </>
-  );
+    return (
+      <>
+        <h1 className={styles.h1}>Изучено карточек: {count} </h1>
+        <div className={styles.cardContainer}>
+          <Button
+            onClickButton={handleIndexReduce}
+            icon="Arrow_Back"
+            color="secondary"
+          />
+          <Card cardIndex={index} onClickEditButton={handleSetCount} />
+          <Button
+            onClickButton={handleIndexIncrease}
+            icon="Arrow_Forward"
+            color="secondary"
+          />
+        </div>
+      </>
+    );
 }

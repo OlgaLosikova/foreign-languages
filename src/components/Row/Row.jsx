@@ -1,19 +1,19 @@
-import Context from "../../Context/DataContext";
+import { WordsContext } from "../../Context/DataContext";
 import EditButton from "../Buttons/EditButton";
 import EditForm from "../EditForm/EditForm";
 import styles from "./Row.module.css";
 import { useContext, useState } from "react";
 
 export default function Row(props) {
-  const { word, transcription, translation, onClickEditButton, wordId } = props;
-  const { hideButton, addRow, deleteWord } = useContext(Context);
+  const { word, transcription, translation,  wordId } = props;
+  const { hideButton, addRow, deleteWord, setEdit } = useContext(WordsContext);
   const [rowSelect, setRowSelect] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
 
   const handleSetEdit = () => {
     setIsEdit(!isEdit);
     setRowSelect(!rowSelect);
-    onClickEditButton();
+    setEdit();
   };
   const handleDelete = (deleteId) => {
     deleteWord(deleteId);

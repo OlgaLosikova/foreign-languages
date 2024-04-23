@@ -4,9 +4,9 @@ import Input from "../Input/Input";
 import cn from "classnames";
 import useInputChecking from "../../hooks/useInputChecking";
 import { useContext } from "react";
-import Context from "../../Context/DataContext";
+import { WordsContext } from "../../Context/DataContext";
 export default function EditForm(props) {
-  const { updateWord, addWord } = useContext(Context);
+  const { updateWord, addWord, setAddRowEnd } = useContext(WordsContext);
   const {
     onClickEditButton,
     rowSelect,
@@ -60,11 +60,22 @@ export default function EditForm(props) {
     ? (disabled = true)
     : (disabled = false);
   const handleSave = () => {
-    const updatedWord = { english, transcription, russian, id:wordId,tags:"" };
-        emptyInputWord && emptyInputTranscription && emptyInputTranslation
+    const updatedWord = {
+      english,
+      transcription,
+      russian,
+      id: wordId,
+      tags: "",
+    };
+    console.log(onClickEditButton);
+    onClickEditButton();
+    emptyInputWord && emptyInputTranscription && emptyInputTranslation
       ? addWord(updatedWord)
       : updateWord(updatedWord, wordId);
-      onClickEditButton();
+      };
+  const handleClose = () => {
+    setAddRowEnd();
+    onClickEditButton();
   };
   return (
     <div className={editStyle}>
@@ -99,7 +110,7 @@ export default function EditForm(props) {
           disabled={disabled}
         />
         <EditButton
-          onClickEditButton={onClickEditButton}
+          onClickEditButton={handleClose}
           color="danger"
           icon="close"
         />
