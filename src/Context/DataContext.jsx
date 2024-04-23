@@ -25,17 +25,14 @@ function WordsContextProvider({ children }) {
   const [hideButton, setHideButton] = useState(false);
   const fetchWords = async () => {
     try {
-      const response = await fetch(`${baseUrl}/api/words`).then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error("Что-то пошло не так...");
-        }
-      });
-      setWords(response);
-      setLoading(false);
+      const response = await fetch(`${baseUrl}/api/words`);
+      if (response.ok) {
+        const data = await response.json();
+        setWords(data);
+        setLoading(false);
+      }
     } catch (err) {
-      setErr(err);
+      setErr(new Error("Что-то пошло не так..."));
       setLoading(false);
     }
   };
@@ -67,15 +64,12 @@ function WordsContextProvider({ children }) {
   };
   const setAddRowEnd = () => {
     setAddRow(false);
-    console.log(addRow);
   };
   const setAddRowStart = () => {
     setAddRow(true);
-    console.log(addRow);
   };
   const setEdit = () => {
     setHideButton(!hideButton);
-    console.log("!");
   };
   return (
     <WordsContext.Provider
