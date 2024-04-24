@@ -13,19 +13,19 @@ A SPA for eanglish learning. Consists of:
 
 ### Editable word reference
 
-🟠 Shows the word transcription and translation in a list with the ability to edit and delete on each line
+Shows the word transcription and translation in a list with the ability to edit and delete on each line
 
 ### Training mode
 
-🟠 Сontains switchable cards for checking and remembering translations
+Сontains switchable cards for checking and remembering translations
 
 ### Addition form
 
-🟠 Allows you to add and edit words. Validates entered values
+Allows you to add and edit words. Validates entered values
 
 ### 404 error page
 
-🟠 Is provided to return to the main page if the user enters an incorrect address in the address bar
+Is provided to return to the main page if the user enters an incorrect address in the address bar
 
 
 ## Technical details
