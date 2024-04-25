@@ -1,24 +1,29 @@
+import { WordsContext } from "../../Context/DataContext";
 import EditButton from "../Buttons/EditButton";
 import EditForm from "../EditForm/EditForm";
 import styles from "./Row.module.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 export default function Row(props) {
-  const { word, transcription, translation, addTableRow, onClickEditButton, hideButton } = props;
+  const { word, transcription, translation,  wordId } = props;
+  const { hideButton, addRow, deleteWord, setEdit } = useContext(WordsContext);
   const [rowSelect, setRowSelect] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
 
   const handleSetEdit = () => {
     setIsEdit(!isEdit);
     setRowSelect(!rowSelect);
-    onClickEditButton();
+    setEdit();
   };
-
+  const handleDelete = (deleteId) => {
+    deleteWord(deleteId);
+  };
   let tableRow;
   let tableCell;
   if (isEdit)
     tableRow = (
       <EditForm
+        wordId={wordId}
         onClickEditButton={handleSetEdit}
         rowSelect={rowSelect}
         editableWord={word}
@@ -27,13 +32,18 @@ export default function Row(props) {
       />
     );
   else {
-    if (!addTableRow&&!hideButton)
+    if (!addRow && !hideButton)
       tableCell = (
         <div className={styles.td}>
           <EditButton
             color="warning"
             icon="edit"
             onClickEditButton={handleSetEdit}
+          />
+          <EditButton
+            color="danger"
+            icon="delete"
+            onClickEditButton={() => handleDelete(wordId)}
           />
         </div>
       );
