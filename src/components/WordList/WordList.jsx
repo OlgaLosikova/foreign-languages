@@ -6,8 +6,8 @@ import Error from "../Error/Error";
 import { observer } from "mobx-react-lite";
 import { useEffect } from "react";
 const WordList = observer((props) => {
-  const { onEdit, onClickEditButton } = props;
-  const { words, loading, err, fetchWords } = store;
+  const { onEdit } = props;
+  const { words, loading, err, fetchWords, setHideButton } = store;
 
   useEffect(() => {
     fetchWords();
@@ -28,7 +28,7 @@ const WordList = observer((props) => {
               transcription={item.transcription}
               translation={item.russian}
               onEdit={onEdit}
-              onClickEditButton={onClickEditButton}
+              onClickEditButton={setHideButton}
             />
           );
         })}

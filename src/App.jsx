@@ -8,29 +8,20 @@ import Missing from "./components/Missing/Missing";
 import { observer } from "mobx-react";
 import store from "./stores/WordsStore";
 const App = observer(() => {
-  const { addRow, setAddRowStart, setAddRowEnd, setHideButton } = store;
+  const { addRow, setAddRowStart, setAddRowEnd } = store;
 
-  const handleAddRowStart = () => {
-    setAddRowStart();
-  };
-  const handleAddRowEnd = () => {
-    setAddRowEnd();
-  };
-  const handleSetEdit = () => {
-    setHideButton();
-  };
   return (
     <div className="App">
       <HashRouter>
-        <Header onClickEditButton={handleAddRowStart} />
+        <Header onClickEditButton={setAddRowStart} />
         <main>
           <Routes>
             <Route
               path="/"
               element={
                 <>
-                  {addRow && <EditForm onClickEditButton={handleAddRowEnd} />}
-                  <WordList onClickEditButton={handleSetEdit} />
+                  {addRow && <EditForm onClickEditButton={setAddRowEnd} />}
+                  <WordList />
                 </>
               }
             />

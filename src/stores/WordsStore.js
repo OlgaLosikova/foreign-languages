@@ -32,13 +32,17 @@ class WordsStore {
       body: JSON.stringify(addedWord),
     });
     const data = await response.json();
-    this.words.push(data);
+    runInAction(() => {
+      this.words.push(data);
+    });
   };
   deleteWord = async (deleteId) => {
     await fetch(`${baseUrl}/api/words/${deleteId}/delete`, {
       method: "POST",
     });
-    this.words = this.words.filter((word) => word.id !== deleteId);
+    runInAction(() => {
+      this.words = this.words.filter((word) => word.id !== deleteId);
+    });
   };
   updateWord = async (updatedWord, updatedId) => {
     const response = await fetch(`${baseUrl}/api/words/${updatedId}/update`, {
@@ -49,9 +53,11 @@ class WordsStore {
       body: JSON.stringify(updatedWord),
     });
     const data = await response.json();
-    this.words = this.words.map((word) =>
-      word.id === updatedId ? data : word
-    );
+    runInAction(() => {
+      this.words = this.words.map((word) =>
+        word.id === updatedId ? data : word
+      );
+    });
   };
   setAddRowStart = () => {
     this.addRow = true;
