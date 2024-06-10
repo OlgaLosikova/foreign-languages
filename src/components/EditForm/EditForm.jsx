@@ -67,7 +67,6 @@ export default function EditForm(props) {
       id: wordId,
       tags: "",
     };
-    console.log(onClickEditButton);
     onClickEditButton();
     emptyInputWord && emptyInputTranscription && emptyInputTranslation
       ? addWord(updatedWord)
